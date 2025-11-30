@@ -1,172 +1,16 @@
-<!DOCTYPE html>
-
-<html>
-
-<head>
-
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-
-
-
-
-<title>Understanding Housing Vulnerability in NYC: Insights for HPD’s Strategic Communications Division</title>
-
-<script src="Interactive-Comm_files/header-attrs-2.29/header-attrs.js"></script>
-<script src="Interactive-Comm_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="Interactive-Comm_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
-<script src="Interactive-Comm_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="Interactive-Comm_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="Interactive-Comm_files/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="Interactive-Comm_files/navigation-1.1/tabsets.js"></script>
-<link href="Interactive-Comm_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="Interactive-Comm_files/highlightjs-9.12.0/highlight.js"></script>
-<link href="Interactive-Comm_files/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
-<script src="Interactive-Comm_files/pagedtable-1.1/js/pagedtable.js"></script>
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-
-
-
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
-</style>
-
-
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
-
-</head>
-
-<body>
-
-
-<div class="container-fluid main-container">
-
-
-
-
-<div id="header">
-
-
-
-<h1 class="title toc-ignore">Understanding Housing Vulnerability in NYC:
-Insights for HPD’s Strategic Communications Division</h1>
-
-</div>
-
+---
+title: 'Understanding Housing Vulnerability in NYC: Insights for HPD’s Strategic Communications
+  Division'
+output:
+  html_document:
+    theme: cosmo
+    toc: false
+    df_print: paged
+    self_contained: false
+  pdf_document:
+    toc: false
+always_allow_html: true
+---
 
 <style>
 body {
@@ -188,398 +32,173 @@ hr {
   font-weight: 600;
 }
 </style>
-<div
-id="a-scrollytelling-brief-for-hpds-strategic-communications-division"
-class="section level3">
-<h3>A Scrollytelling Brief for HPD’s Strategic Communications
-Division</h3>
-<p><strong>Primary audience:</strong><br />
-Ilana Maier, Assistant Commissioner for Strategic Communications, NYC
-Department of Housing Preservation and Development (HPD).</p>
-</div>
-<div id="understanding-housing-vulnerability-in-new-york-city"
-class="section level2">
-<h2>Understanding Housing Vulnerability in New York City</h2>
-<p>New York City’s housing pressures have intensified over the past
-decade, and their effects are not felt evenly across its neighborhoods.
-Rising rent burdens, declining affordability protections, and aging
-building stock intersect differently from one community district to
-another. These patterns create not only operational challenges for HPD,
-but also a strategic communications challenge: renters and property
-owners experience risk locally, and HPD’s messages need to reach the
-communities where those pressures are most acute.</p>
-<p>For the Strategic Communications Division, a central question is
-where residents are most exposed because affordability pressures and
-regulatory protections are misaligned. Some boroughs experience high
-rent burden despite robust stabilization coverage; others have very
-limited stabilization yet still face rising costs. Understanding these
-distinctions is essential for tailoring tenant-facing messaging,
-preservation outreach, and multilingual communication strategies.</p>
-<p>A second, equally important question is which neighborhoods within
-each borough show overlapping signs of structural and affordability
-risk. Vulnerability does not follow borough boundaries, and community
-districts with similar citywide profiles can experience very different
-conditions on the ground. To support more precise targeting, our
-analysis integrates multiple dimensions of vulnerability—including rent
-burden, stabilization coverage, building age, and density—into
-neighborhood-level interactive tools designed to surface where risks are
-most concentrated.</p>
-<p>The two interactive visuals used throughout this brief—the borough
-scatterplot and the multi-tab neighborhood explorer—allow HPD to move
-from a citywide framing of the problem to a granular, district-level
-understanding of where communication efforts can be most impactful.</p>
-<ol style="list-style-type: decimal">
-<li><strong>Where are renters most exposed because affordability
-pressures and stabilization protections are misaligned across
-boroughs?</strong><br />
-</li>
-<li><strong>Within boroughs, which neighborhoods face overlapping
-structural and affordability risks that justify more intensive
-communications and outreach?</strong></li>
-</ol>
-<p>To help address these questions, the following interactive visuals
-provide an exploration of rental pressure, structural conditions, and
-housing vulnerability across the city. The aim is to give HPD’s
-Strategic Communications team a clearer sense of <em>where</em> risks
-concentrate, <em>why</em> vulnerability takes different forms across
-neighborhoods, and <em>how</em> communications can align more precisely
-with on-the-ground realities faced by tenants and property owners.</p>
-<p>Using these tools, we move from borough-level patterns to
-neighborhood-level vulnerability, and ultimately to message strategies
-that reflect the blend of affordability stress, stabilization coverage,
-and building conditions that shape housing experiences across New York
-City.</p>
-<hr />
-</div>
-<div
-id="borough-level-misalignment-where-pressure-and-protection-diverge"
-class="section level2">
-<h2>Borough-Level Misalignment: Where Pressure and Protection
-Diverge</h2>
-<p>Before turning to neighborhood-level patterns, it is important to
-understand the borough-scale dynamics shaping renter exposure across New
-York City. Affordability pressures and stabilization protections do not
-move in parallel; some boroughs carry substantial rent burden despite
-extensive rent-stabilized housing, while others have very limited
-stabilization yet still face rising market pressures. For HPD’s
-Strategic Communications Division, this misalignment helps determine
-where tenant-facing messaging, program awareness campaigns, and
-community outreach may need to be strengthened.</p>
-<p>The borough scatterplot illustrates this relationship by positioning
-each borough according to two core dimensions: affordability pressure
-(measured through rent burden and severe burden) and stabilization
-coverage (share of housing units under regulation). Boroughs that appear
-higher on the chart experience greater affordability stress. Boroughs
-that fall farther to the left have less stabilization coverage. Those
-positioned <strong>high and to the left</strong> represent the city’s
-most exposed borough-level conditions—where tenants face both high rent
-strain and limited regulatory protection.</p>
-<iframe 
+
+
+### A Scrollytelling Brief for HPD’s Strategic Communications Division  
+
+**Primary audience:**  
+Ilana Maier, Assistant Commissioner for Strategic Communications, NYC Department of Housing Preservation and Development (HPD).
+
+
+## Understanding Housing Vulnerability in New York City
+
+New York City’s housing landscape has shifted dramatically over the past decade. Rent-stabilized units—long a stabilizing force for working- and middle-income households—have steadily declined. As this supply contracts, more renters face market-rate exposure, fewer protections, and greater affordability pressures citywide.
+
+To ground the borough- and neighborhood-level analysis that follows, the trend below highlights how stabilization protections have eroded over the past decade:
+
+![](figure1.png){width=100%}
+
+<p style="font-size:0.8em; color:#666; text-align:center;">
+<strong>Figure 1.</strong> NYC’s rent-stabilized housing stock has steadily declined from 2015–2024, reducing a key layer of affordability protection for many households.
+</p>
+
+These pressures are not experienced evenly across the city. Some boroughs face high rent burden despite extensive stabilization coverage, while others have very limited stabilization but still endure rising market pressures. Within those boroughs, neighborhood-level differences—such as building age, density, and income levels—further shape how renters and property owners experience risk.
+
+For HPD’s Strategic Communications Division, these distinctions matter. Vulnerability is local: renters feel pressure through aging buildings, rising rents, and uneven access to tenant protections, while owners navigate preservation challenges shaped by neighborhood context. When conditions vary block by block, messaging must adapt with the same level of precision.
+
+This brief builds toward two central questions:
+
+1. **Where are renters most exposed because affordability pressures and stabilization protections are misaligned across boroughs?**  
+2. **Within each borough, which neighborhoods face overlapping structural and affordability risks that justify more intensive, locally tailored communication strategies?**
+
+The interactive visuals that follow move from a citywide framing of affordability stress to a granular, district-level understanding of where vulnerability converges—and where HPD’s strategic communications can be most impactful.
+
+---
+
+## Borough-Level Misalignment: Where Pressure and Protection Diverge
+
+Before turning to neighborhood-level patterns, it is important to understand the borough-scale dynamics shaping renter exposure across New York City. Affordability pressures and stabilization protections do not move in parallel; some boroughs carry substantial rent burden despite extensive rent-stabilized housing, while others have very limited stabilization yet still face rising market pressures. For HPD’s Strategic Communications Division, this misalignment helps determine where tenant-facing messaging, program awareness campaigns, and community outreach may need to be strengthened.
+
+The borough scatterplot illustrates this relationship by positioning each borough according to two core dimensions: affordability pressure (measured through rent burden and severe burden) and stabilization coverage (share of housing units under regulation). Boroughs that appear higher on the chart experience greater affordability stress. Boroughs that fall farther to the left have less stabilization coverage. Those positioned **high and to the left** represent the city’s most exposed borough-level conditions—where tenants face both high rent strain and limited regulatory protection.
+
+```{=html}
+<div style="padding: 0px 20px; width:100%;">
+<iframe
   src="https://wofule666.shinyapps.io/nyc-borough-scatter/" 
-  width="100%" 
+  width="125%" 
   height="700px"
   style="border:none;"
   sandbox="allow-scripts allow-same-origin allow-forms">
 </iframe>
-<div id="interpreting-borough-level-patterns" class="section level3">
-<h3>Interpreting Borough-Level Patterns</h3>
-<p>Several distinctions become clear once the boroughs are viewed
-through this dual lens:</p>
-<p><strong>Queens and Staten Island</strong> stand out as areas with
-relatively low stabilization coverage yet meaningful rent burden.
-Tenants in these areas rely more heavily on market conditions and may
-have less clarity around their rights. These boroughs represent strong
-candidates for targeted communications around rental assistance
-programs, tenant protections, and community-based resources.</p>
-<p><strong>The Bronx</strong>, by contrast, shows the highest
-stabilization coverage in the city but also the highest levels of rent
-burden. These conditions highlight a form of vulnerability driven less
-by regulatory gaps and more by structural income constraints.
-Communications efforts here may benefit from emphasizing
-anti-displacement protections, emergency rental assistance, and
-preservation programs designed to support lower-income residents.</p>
-<p><strong>Brooklyn and Manhattan</strong> fall somewhere in between,
-with substantial stabilization coverage but continued affordability
-pressure. These internal variations signal the need for finely tailored
-messaging—clarifying both tenant protections and program pathways, while
-acknowledging the diverse conditions across neighborhoods within each
-borough.</p>
-<p>Together, these borough-level findings set the stage for more
-granular analysis. The next section introduces a neighborhood-level
-vulnerability index to identify where, within each borough, overlapping
-affordability and structural conditions create concentrated risk—and
-where locally tailored communications may have the greatest impact.</p>
-<hr />
-</div>
-</div>
-<div
-id="vulnerability-isnt-evenly-distributed-it-concentrates-in-specific-neighborhoods"
-class="section level2">
-<h2>Vulnerability Isn’t Evenly Distributed, It Concentrates in Specific
-Neighborhoods</h2>
-<p>The borough-level view highlights broad misalignments between
-affordability pressure and stabilization protection, but these patterns
-do not tell the whole story. Tenants experience housing pressure at the
-neighborhood level, not the borough level. Within a single borough,
-conditions can vary dramatically from one community district to the
-next—differences in building age, density, stabilization coverage, and
-rent burden that meaningfully shape how residents experience risk.</p>
-<p>For HPD’s Strategic Communications Division, these neighborhood
-differences are especially important. Citywide narratives about
-affordability and protection only go so far; targeted campaigns,
-community engagement, and informational outreach depend on understanding
-where vulnerabilities cluster most intensely and why.</p>
-<p>To capture this finer-grained picture, our analysis introduces the
-<strong>Composite District Vulnerability Index (CDVI)</strong>, a
-neighborhood-level measure that integrates affordability strain,
-structural conditions, and stabilization access. The goal is not to
-assign a single number to each community, but to highlight where
-<strong>multiple forms of exposure converge</strong>—places where
-communications interventions are likely to have the greatest impact.</p>
-<p>This section addresses our second core question:</p>
-<p><strong>Which neighborhoods exhibit the greatest combination of
-affordability and structural vulnerabilities, indicating a need for more
-intensive, locally tailored communication strategies?</strong></p>
-<p>To explore these patterns, the multi-tab interactive tool below
-provides three coordinated views:</p>
-<ul>
-<li><strong>CDVI Map</strong> — a citywide visualization of overall
-vulnerability,<br />
-</li>
-<li><strong>Relative Ranking</strong> — how each district compares with
-others within the same borough.</li>
-<li><strong>Mini-Maps</strong> — the structural drivers behind
-vulnerability, including building age, density, and stabilization
-share</li>
-</ul>
-<p>Before moving into district-specific insights, begin by exploring the
-<strong>CDVI Map</strong> tab within the embedded tool. Hovering over a
-district will display its name; clicking reveals its CDVI score and
-component indicators. The ability to zoom and pan supports closer
-inspection of specific corridors or border areas.</p>
-<p>This neighborhood-level view sets the foundation for understanding
-not only <em>where</em> vulnerability is concentrated, but <em>why</em>
-certain districts warrant deeper, more tailored communication
-efforts.</p>
+```
+
+To complement the interactive scatterplot above, this figure shows how stabilization coverage (Panel A) and affordability pressure (Panel B) diverge across boroughs.
+
+![](figure2.png){width=100%}
+
+<p style="font-size:0.8em; color:#666; text-align:center;">
+<strong>Figure 2.</strong> Stabilization coverage and rent-burden indicators reveal two distinct borough-level forms of housing vulnerability.
+</p>
+
+### Interpreting Borough-Level Patterns
+
+Several distinctions become clear once the boroughs are viewed through this dual lens:
+
+**Queens and Staten Island** stand out as areas with relatively low stabilization coverage yet meaningful rent burden. Tenants in these areas rely more heavily on market conditions and may have less clarity around their rights. These boroughs represent strong candidates for targeted communications around rental assistance programs, tenant protections, and community-based resources.
+
+**The Bronx**, by contrast, shows the highest stabilization coverage in the city but also the highest levels of rent burden. These conditions highlight a form of vulnerability driven less by regulatory gaps and more by structural income constraints. Communications efforts here may benefit from emphasizing anti-displacement protections, emergency rental assistance, and preservation programs designed to support lower-income residents.
+
+**Brooklyn and Manhattan** fall somewhere in between, with substantial stabilization coverage but continued affordability pressure. These internal variations signal the need for finely tailored messaging—clarifying both tenant protections and program pathways, while acknowledging the diverse conditions across neighborhoods within each borough.
+
+Together, these borough-level findings set the stage for more granular analysis. The next section introduces a neighborhood-level vulnerability index to identify where, within each borough, overlapping affordability and structural conditions create concentrated risk—and where locally tailored communications may have the greatest impact.
+
+---
+
+## Vulnerability Isn’t Evenly Distributed, It Concentrates in Specific Neighborhoods
+
+The borough-level view highlights broad misalignments between affordability pressure and stabilization protection, but these patterns do not tell the whole story. Tenants experience housing pressure at the neighborhood level, not the borough level. Within a single borough, conditions can vary dramatically from one community district to the next—differences in building age, density, stabilization coverage, and rent burden that meaningfully shape how residents experience risk.
+
+For HPD’s Strategic Communications Division, these neighborhood differences are especially important. Citywide narratives about affordability and protection only go so far; targeted campaigns, community engagement, and informational outreach depend on understanding where vulnerabilities cluster most intensely and why.
+
+To capture this finer-grained picture, our analysis introduces the **Composite District Vulnerability Index (CDVI)**, a neighborhood-level measure that integrates affordability strain, structural conditions, and stabilization access. The goal is not to assign a single number to each community, but to highlight where **multiple forms of exposure converge**—places where communications interventions are likely to have the greatest impact.
+
+This section addresses our second core question:
+
+**Which neighborhoods exhibit the greatest combination of affordability and structural vulnerabilities, indicating a need for more intensive, locally tailored communication strategies?**
+
+To explore these patterns, the multi-tab interactive tool below provides three coordinated views:
+
+- **CDVI Map** — a citywide visualization of overall vulnerability,  
+- **Relative Ranking** — how each district compares with others within the same borough.
+- **Mini-Maps** — the structural drivers behind vulnerability, including building age, density, and stabilization share  
+
+Before moving into district-specific insights, begin by exploring the **CDVI Map** tab within the embedded tool. Hovering over a district will display its name; clicking reveals its CDVI score and component indicators. The ability to zoom and pan supports closer inspection of specific corridors or border areas.
+
+This neighborhood-level view sets the foundation for understanding not only *where* vulnerability is concentrated, but *why* certain districts warrant deeper, more tailored communication efforts.
+
+```{=html}
+<div style="padding: 0px 20px; width:100%;">
 <iframe 
   src="https://elysiasuhandinata.shinyapps.io/final_project/" 
-  width="100%" 
-  height="900px"
-  style="border:none;"
+  width="125%" 
+  height="1000px"
+  style="border:none; display:block; margin:0 auto;"
   sandbox="allow-scripts allow-same-origin allow-forms">
 </iframe>
 </div>
-<div
-id="identifying-the-neighborhoods-where-overlapping-pressures-demand-targeted-communication"
-class="section level2">
-<h2>Identifying the Neighborhoods Where Overlapping Pressures Demand
-Targeted Communication</h2>
-<p>As you explore the CDVI map, a clear pattern emerges: housing
-vulnerability in New York City does not follow borough borders or broad
-geographic divides. Instead, it concentrates in specific community
-districts where affordability pressures, structural conditions, and
-stabilization gaps reinforce one another. The darker red areas on the
-map mark districts where these overlapping risks are most acute.</p>
-<p>Several clusters stand out immediately:</p>
-<ul>
-<li><strong>Lower Manhattan</strong>, including the Lower East Side,
-Chinatown, and parts of Tribeca, reflects elevated vulnerability driven
-by older housing stock combined with dense multifamily buildings and
-persistent affordability pressures.</li>
-<li><strong>Western Queens</strong>, particularly Long Island City,
-Sunnyside, and Astoria, shows a rapid accumulation of risk as rising
-rents, higher-density buildings, and uneven stabilization coverage
-converge.</li>
-<li>The <strong>South Bronx</strong>, including Hunts Point and
-Longwood, highlights a different form of exposure—one where extensive
-stabilization coverage exists but deep income constraints and aging
-buildings continue to drive vulnerability.</li>
-<li>Portions of <strong>southern Brooklyn</strong> also register higher
-CDVI scores, shaped by mixed building stock, growing affordability
-strain, and lower stabilization rates in certain pockets.</li>
-</ul>
-<p>Meanwhile, neighborhoods in <strong>northern Manhattan</strong>, the
-<strong>central Bronx</strong>, and <strong>eastern Queens</strong> tend
-to exhibit lower vulnerability scores. In these areas, stabilization
-protections, somewhat newer building stock, or lower structural strain
-help moderate overall risk—even if affordability remains a concern.</p>
-<p>For Strategic Communications, districts with higher CDVI scores
-represent <strong>priority outreach zones</strong>. These are areas
-where coordinated, neighborhood-specific messaging can have the greatest
-impact—whether that involves educating tenants about their rights,
-connecting residents with rental assistance programs, clarifying
-stabilization rules, or supporting property owners with guidance on
-maintenance, preservation programs, and code compliance.</p>
-<p>The CDVI map sets the foundation for understanding
-<strong>where</strong> vulnerability is most concentrated. The next step
-is to examine <strong>why</strong> these patterns take the shape they do
-by looking at the structural drivers behind them.</p>
-<div id="pinpointing-outliers-within-each-borough"
-class="section level3">
-<h3>Pinpointing Outliers Within Each Borough</h3>
-<p>While the CDVI map highlights citywide patterns, the “Relative
-Ranking” tab helps reveal something equally important for Strategic
-Communications: which neighborhoods stand out <em>within</em> their own
-borough. A district may not look extreme on a citywide map, but if it
-sits far above its borough’s median vulnerability, it represents a local
-outlier where residents experience meaningfully greater strain than
-their immediate surroundings.</p>
-<p>When you switch to the “Relative Ranking” view, each point represents
-a community district, positioned relative to the median CDVI for its
-borough. Districts that fall well to the right of the vertical zero line
-show elevated vulnerability compared with their borough norm.</p>
-<p>Across the boroughs, several themes emerge:</p>
-<ul>
-<li>In <strong>Manhattan</strong>, vulnerability tends to reflect
-layered pressures — older buildings, high density, and persistent
-affordability strain — creating multiple districts that sit above the
-borough median.</li>
-<li>In <strong>Queens</strong>, a handful of neighborhoods in the
-western part of the borough stand out clearly, even though Queens
-overall appears moderate in the citywide distribution.</li>
-<li>In the <strong>Bronx</strong>, many districts cluster above the
-median, reinforcing that affordability pressures and aging stock are
-widespread and deeply rooted.</li>
-</ul>
-<p>For HPD’s Communications Division, these borough-level contrasts
-offer a practical guide for prioritization. Districts that consistently
-sit above their borough median should be treated as <strong>priority
-communication zones</strong>, where targeted outreach, multilingual
-messaging, and coordinated efforts with community organizations can be
-most impactful. This view complements the CDVI map by ensuring that even
-within high-need boroughs, the neighborhoods with the most concentrated
-risk receive focused attention.</p>
-</div>
-<div
-id="why-vulnerability-looks-different-across-neighborhoods-the-structural-drivers"
-class="section level3">
-<h3>Why Vulnerability Looks Different Across Neighborhoods: The
-Structural Drivers</h3>
-<p>The CDVI highlights where vulnerability is concentrated, but the
-“Mini-Maps” tab helps explain <em>why</em>. By examining building age,
-density, and stabilization coverage, clear structural patterns emerge
-that shape local conditions and guide how communications should be
-tailored.</p>
-<div id="building-age" class="section level4">
-<h4>Building Age</h4>
-<p>Districts with older housing stock—especially in
-<strong>Manhattan</strong>, the <strong>Bronx</strong>, and parts of
-<strong>northwestern Queens</strong>—face higher maintenance needs and
-infrastructure strain. These areas benefit from owner-focused messaging
-on preservation and repairs, alongside tenant communications that
-clarify how to report unsafe conditions.</p>
-</div>
-<div id="density" class="section level4">
-<h4>Density</h4>
-<p>Higher-density buildings, most visible in <strong>Manhattan</strong>,
-<strong>western Queens</strong>, and sections of
-<strong>Brooklyn</strong>, amplify the impact of system failures.
-Communications here should emphasize building-wide safety, emergency
-preparedness, and coordinated reporting for large multifamily
-buildings.</p>
-</div>
-<div id="stabilization-coverage" class="section level4">
-<h4>Stabilization Coverage</h4>
-<p>Stabilization varies widely across the city. The
-<strong>Bronx</strong>, <strong>Upper Manhattan</strong>, and central
-areas of <strong>Brooklyn</strong> and <strong>Queens</strong> show
-stronger coverage, while <strong>Staten Island</strong> and parts of
-<strong>eastern Queens</strong> do not.<br />
-- Low-stabilization areas: focus on rights in market-rate housing and
-rental assistance resources.<br />
-- High-stabilization areas: highlight protections, enforcement pathways,
-and legal recourse.</p>
-<p>Together, these structural layers clarify why certain districts score
-higher on the CDVI—and help HPD shape messaging that aligns with the
-specific pressures residents face in each neighborhood.</p>
-</div>
-</div>
-</div>
-<div
-id="closing-reflections-where-vulnerability-converges-and-why-it-matters-for-communications"
-class="section level2">
-<h2>Closing Reflections: Where Vulnerability Converges and Why It
-Matters for Communications</h2>
-<p>Across all three visuals, one theme stands out: housing vulnerability
-in New York City is shaped by <em>where</em> affordability pressure and
-regulatory protections misalign, and <em>why</em> those pressures
-concentrate in certain neighborhoods. At the borough level, the
-scatterplot shows two distinct forms of exposure—places with limited
-stabilization despite meaningful rent burden, and places where deep
-affordability strain persists even within a largely stabilized stock.
-Each scenario demands a different communications approach, whether
-clarifying rights in unregulated housing or strengthening messaging
-around protections, resources, and enforcement.</p>
-<p>The neighborhood-level lens sharpens these patterns further. The CDVI
-map highlights districts where multiple pressures converge—aging
-buildings, dense multifamily stock, and elevated rent burden appearing
-together. These are the communities where renters and owners are most
-likely to experience instability or uncertainty, and where
-communications must be localized, proactive, and multilingual. These
-high-vulnerability districts emerge consistently in parts of lower
-Manhattan, western Queens, the South Bronx, and sections of
-Brooklyn.</p>
-<p>The structural driver maps then clarify <em>why</em> these
-neighborhoods stand out. In some districts, vulnerability is rooted in
-older infrastructure; in others, in the scale and density of buildings;
-in others, in limited stabilization coverage. This breakdown makes it
-possible for HPD to match message content to neighborhood
-realities—whether emphasizing maintenance and safety in dense corridors
-or tenant rights and protections where stabilization is thin.</p>
-<p>Taken together, the unified tool provides a clearer path for HPD to
-target communications where they will matter most. It shows which
-communities face the greatest exposure, what forms that exposure takes,
-and how message design can better reflect on-the-ground conditions. By
-grounding communications strategy in these spatial patterns, HPD can
-reach the right audiences with the right information at the right
-time—strengthening both tenant stability and neighborhood
-resilience.</p>
-</div>
+
+```
+
+## Identifying the Neighborhoods Where Overlapping Pressures Demand Targeted Communication
+
+As you explore the CDVI map, a clear pattern emerges: housing vulnerability in New York City does not follow borough borders or broad geographic divides. Instead, it concentrates in specific community districts where affordability pressures, structural conditions, and stabilization gaps reinforce one another. The darker red areas on the map mark districts where these overlapping risks are most acute.
+
+Several clusters stand out immediately:
+
+- **Lower Manhattan**, including the Lower East Side, Chinatown, and parts of Tribeca, reflects elevated vulnerability driven by older housing stock combined with dense multifamily buildings and persistent affordability pressures.
+- **Western Queens**, particularly Long Island City, Sunnyside, and Astoria, shows a rapid accumulation of risk as rising rents, higher-density buildings, and uneven stabilization coverage converge.
+- The **South Bronx**, including Hunts Point and Longwood, highlights a different form of exposure—one where extensive stabilization coverage exists but deep income constraints and aging buildings continue to drive vulnerability.
+- Portions of **southern Brooklyn** also register higher CDVI scores, shaped by mixed building stock, growing affordability strain, and lower stabilization rates in certain pockets.
+
+Meanwhile, neighborhoods in **northern Manhattan**, the **central Bronx**, and **eastern Queens** tend to exhibit lower vulnerability scores. In these areas, stabilization protections, somewhat newer building stock, or lower structural strain help moderate overall risk—even if affordability remains a concern.
+
+For Strategic Communications, districts with higher CDVI scores represent **priority outreach zones**. These are areas where coordinated, neighborhood-specific messaging can have the greatest impact—whether that involves educating tenants about their rights, connecting residents with rental assistance programs, clarifying stabilization rules, or supporting property owners with guidance on maintenance, preservation programs, and code compliance.
+
+The CDVI map sets the foundation for understanding **where** vulnerability is most concentrated. The next step is to examine **why** these patterns take the shape they do by looking at the structural drivers behind them.
+
+### Pinpointing Outliers Within Each Borough
+
+While the CDVI map highlights citywide patterns, the “Relative Ranking” tab helps reveal something equally important for Strategic Communications: which neighborhoods stand out *within* their own borough. A district may not look extreme on a citywide map, but if it sits far above its borough’s median vulnerability, it represents a local outlier where residents experience meaningfully greater strain than their immediate surroundings.
+
+When you switch to the “Relative Ranking” view, each point represents a community district, positioned relative to the median CDVI for its borough. Districts that fall well to the right of the vertical zero line show elevated vulnerability compared with their borough norm.
+
+Across the boroughs, several themes emerge:
+
+- In **Manhattan**, vulnerability tends to reflect layered pressures — older buildings, high density, and persistent affordability strain — creating multiple districts that sit above the borough median.
+- In **Queens**, a handful of neighborhoods in the western part of the borough stand out clearly, even though Queens overall appears moderate in the citywide distribution.
+- In the **Bronx**, many districts cluster above the median, reinforcing that affordability pressures and aging stock are widespread and deeply rooted.
+
+For HPD’s Communications Division, these borough-level contrasts offer a practical guide for prioritization. Districts that consistently sit above their borough median should be treated as **priority communication zones**, where targeted outreach, multilingual messaging, and coordinated efforts with community organizations can be most impactful. This view complements the CDVI map by ensuring that even within high-need boroughs, the neighborhoods with the most concentrated risk receive focused attention.
+
+### Why Vulnerability Looks Different Across Neighborhoods: The Structural Drivers
+
+The CDVI highlights where vulnerability is concentrated, but the “Mini-Maps” tab helps explain *why*. By examining building age, density, and stabilization coverage, clear structural patterns emerge that shape local conditions and guide how communications should be tailored.
+
+#### Building Age  
+Districts with older housing stock—especially in **Manhattan**, the **Bronx**, and parts of **northwestern Queens**—face higher maintenance needs and infrastructure strain. These areas benefit from owner-focused messaging on preservation and repairs, alongside tenant communications that clarify how to report unsafe conditions.
+
+#### Density  
+Higher-density buildings, most visible in **Manhattan**, **western Queens**, and sections of **Brooklyn**, amplify the impact of system failures. Communications here should emphasize building-wide safety, emergency preparedness, and coordinated reporting for large multifamily buildings.
+
+#### Stabilization Coverage  
+Stabilization varies widely across the city. The **Bronx**, **Upper Manhattan**, and central areas of **Brooklyn** and **Queens** show stronger coverage, while **Staten Island** and parts of **eastern Queens** do not.  
+- Low-stabilization areas: focus on rights in market-rate housing and rental assistance resources.  
+- High-stabilization areas: highlight protections, enforcement pathways, and legal recourse.
+
+Together, these structural layers clarify why certain districts score higher on the CDVI—and help HPD shape messaging that aligns with the specific pressures residents face in each neighborhood.
+
+## Closing Reflections: Where Vulnerability Converges and Why It Matters for Communications
+
+Across all three visuals, one theme stands out: housing vulnerability in New York City is shaped by *where* affordability pressure and regulatory protections misalign, and *why* those pressures concentrate in certain neighborhoods. At the borough level, the scatterplot shows two distinct forms of exposure—places with limited stabilization despite meaningful rent burden, and places where deep affordability strain persists even within a largely stabilized stock. Each scenario demands a different communications approach, whether clarifying rights in unregulated housing or strengthening messaging around protections, resources, and enforcement.
+
+The neighborhood-level lens sharpens these patterns further. The CDVI map highlights districts where multiple pressures converge—aging buildings, dense multifamily stock, and elevated rent burden appearing together. These are the communities where renters and owners are most likely to experience instability or uncertainty, and where communications must be localized, proactive, and multilingual. These high-vulnerability districts emerge consistently in parts of lower Manhattan, western Queens, the South Bronx, and sections of Brooklyn.
+
+The structural driver maps then clarify *why* these neighborhoods stand out. In some districts, vulnerability is rooted in older infrastructure; in others, in the scale and density of buildings; in others, in limited stabilization coverage. This breakdown makes it possible for HPD to match message content to neighborhood realities—whether emphasizing maintenance and safety in dense corridors or tenant rights and protections where stabilization is thin.
+
+Taken together, the unified tool provides a clearer path for HPD to target communications where they will matter most. It shows which communities face the greatest exposure, what forms that exposure takes, and how message design can better reflect on-the-ground conditions. By grounding communications strategy in these spatial patterns, HPD can reach the right audiences with the right information at the right time—strengthening both tenant stability and neighborhood resilience.
 
 
 
 
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
 
 
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-
-</body>
-</html>
