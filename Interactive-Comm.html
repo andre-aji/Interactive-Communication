@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Understanding Housing Vulnerability in New York City</title>
+
+<script src="Interactive-Comm_files/header-attrs-2.29/header-attrs.js"></script>
+<script src="Interactive-Comm_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Interactive-Comm_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="Interactive-Comm_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Interactive-Comm_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Interactive-Comm_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="Interactive-Comm_files/navigation-1.1/tabsets.js"></script>
+<link href="Interactive-Comm_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="Interactive-Comm_files/highlightjs-9.12.0/highlight.js"></script>
+<link href="Interactive-Comm_files/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="Interactive-Comm_files/pagedtable-1.1/js/pagedtable.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Understanding Housing Vulnerability in New
+York City</h1>
+
+</div>
+
+
+<style>
+body {
+  font-family: "Helvetica", Arial, sans-serif;
+  line-height: 1.55;
+  color: #222222;
+}
+h1, h2, h3, h4 {
+  font-weight: 650;
+}
+.section-title {
+  margin-top: 60px;
+}
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.emphasis {
+  font-weight: 600;
+}
+</style>
+<div
+id="an-interactive-communication-for-the-chief-marketing-executive-at-nyc-department-of-housing-preservation-development-hpd"
+class="section level2">
+<h2>An Interactive Communication for the Chief Marketing Executive at
+NYC Department of Housing Preservation &amp; Development (HPD)</h2>
+<p>New York City’s rent-stabilized housing stock functions as the city’s
+primary affordability infrastructure, providing a regulatory buffer that
+insulates low- and moderate-income renters from volatile market
+conditions. Yet over the past decade, this system has undergone
+sustained contraction.</p>
+<p>As <strong>Figure 1</strong> and <strong>Table 1</strong> show, the
+city lost rent-stabilized units every year from 2015 through
+2023—roughly 42,000 units in total—indicating a systemic decline rather
+than short-term fluctuation. The sharpest contractions coincide with
+regulatory and market transitions, including the pre-2019 deregulation
+environment, the implementation of HSTPA, and subsequent shifts in
+registration behavior. These inflection points reveal how policy change
+can amplify vulnerability through owner noncompliance, disinvestment, or
+temporary reporting distortions. The apparent rebound in 2024 reflects
+intensified registration enforcement, not genuine replenishment of the
+regulated stock, and therefore should be interpreted as a data
+correction rather than a stabilization of long-term loss.</p>
+<p><img src="figure1.png" style="width:100.0%" /></p>
+<p style="font-size:0.8em; color:#666; text-align:center;">
+<strong>Figure 1.</strong> NYC Rent-Stabilized Housing Stock
+</p>
+<p>The figure below shows how stabilization coverage (Panel A) and
+affordability pressure (Panel B) diverge across boroughs.</p>
+<img src="table1.png" style="width:100.0%" />
+<p style="font-size:0.8em; color:#666; text-align:center;">
+<strong>Table 1.</strong> Total Estimated Units, Annual Net Change, and
+Contextual Notes
+</p>
+<p>While the operational implications of this attrition are widely
+understood within HPD, the communication challenges they introduce are
+equally significant. The department must articulate complex patterns of
+housing vulnerability to audiences that range from tenants and elected
+officials to journalists and advocacy organizations, each with distinct
+levels of technical knowledge and competing narratives about the causes
+of instability. The CME’s responsibility is to shape a clear,
+evidence-based account of these trends that guides outreach initiatives,
+policy discussions, and builds trust in HPD’s preservation efforts.
+Doing this effectively requires a narrative architecture that is
+grounded in data, precise in its distinctions, and accessible enough to
+counter oversimplification. The analysis that follows is designed to
+support that communication function by translating structural housing
+dynamics into a visual framework that clarifies where vulnerability is
+intensifying and why it matters.</p>
+</div>
+<div id="protection-and-pressure-are-misaligned-across-boroughs"
+class="section level2">
+<h2>Protection and Pressure Are Misaligned Across Boroughs</h2>
+<p>The citywide decline in rent-stabilized units establishes the scale
+of the problem, but borough-level patterns reveal how its impacts are
+uneven and why the challenge of addressing housing affordability is more
+complex than a simple loss narrative suggests.</p>
+<p>Figure 2 shows how regulatory protection and affordability pressures
+are misaligned. Some boroughs face high rent burden despite extensive
+stabilization coverage, while others have very limited stabilization but
+still endure high cost pressures.</p>
+<img src="figure2.png" style="width:100.0%" />
+<p style="font-size:0.8em; color:#666; text-align:center;">
+<strong>Figure 2.</strong> Borough-Level Regulatory Protection and
+Housing Cost Stress
+</p>
+<p>This suggests that boroughs experience housing vulnerability through
+different underlying mechanisms. In places with extensive stabilization,
+like the Bronx, elevated rent-burden levels likely stem from conditions
+intrinsic to the housing stock itself: older pre-war buildings with
+significant capital needs, high-density multifamily structures that
+concentrate maintenance risk, and ownership patterns that can exacerbate
+deferred repair. In Queens, by contrast, limited stabilization coverage
+means vulnerability is shaped by exposure to rent volatility in an
+unregulated market.</p>
+<p>This understanding establishes the analytical base the CME needs
+before shifting to a finer spatial scale.</p>
+</div>
+<div
+id="neighborhood-level-vulnerability-across-manhattan-the-bronx-and-queens"
+class="section level2">
+<h2>Neighborhood-Level Vulnerability Across Manhattan, the Bronx, and
+Queens</h2>
+<p>To capture neighborhood-level differences, the analysis constructs a
+Community District Vulnerability Index (CDVI) based on three structural
+indicators: the average age of the housing stock, the concentration of
+units within multifamily buildings, and the share of rent-stabilized
+housing. These drivers were selected because they correspond to areas
+where HPD can intervene through preservation financing, code
+enforcement, owner outreach, and stabilization-supporting programs.</p>
+<p>The analysis focuses on Manhattan, the Bronx, and Queens because
+these boroughs exhibit the widest variation in building conditions,
+housing density, and stabilization coverage. This heterogeneity makes
+them the most informative for understanding how structural vulnerability
+forms and where policy interventions may be most effectively
+deployed.</p>
+<p>The interactive tool below organizes the CDVI and its component
+indicators into three linked tabs that allow the CME to explore
+vulnerability at multiple levels of detail.</p>
+<ol style="list-style-type: decimal">
+<li>CDVI Map – a visualization of overall vulnerability, highlighting
+districts in the highest bands (typically scores above the
+mid-50s).</li>
+<li>Relative Ranking – a view of how each district compares with others
+within the same borough, flagging local outliers even where the borough
+average appears moderate.</li>
+<li>Mini-Maps – isolates each underlying component, allowing the CME to
+see where each structural driver is most geographically
+concentrated.</li>
+</ol>
+<p>Hovering over a district displays its name; clicking reveals its
+structural profile; zoom functions allow closer inspection of corridors
+or boundary areas where conditions shift noticeably.</p>
+<div style="padding: 0px 20px; width:100%;">
+<iframe 
+  src="https://elysiasuhandinata.shinyapps.io/final_project/" 
+  width="125%" 
+  height="1000px"
+  style="border:none; display:block; margin:0 auto;"
+  sandbox="allow-scripts allow-same-origin allow-forms">
+</iframe>
+</div>
+
+</div>
+<div
+id="interpreting-the-structural-drivers-of-neighborhood-vulnerability"
+class="section level2">
+<h2>Interpreting the Structural Drivers of Neighborhood
+Vulnerability</h2>
+<p>The narrative below is drawn directly from the interactions,
+patterns, and district-level profiles surfaced through the tool. The
+analysis aims to address two core questions:</p>
+<p>Where in New York City is structural housing vulnerability most
+acute, and what mechanisms explain these spatial patterns? How can these
+differentiated mechanisms guide the CME in shaping targeted,
+evidence-based communication that strengthens HPD’s outreach, policy
+framing, and public trust?</p>
+</div>
+<div id="structural-determinants-of-elevated-housing-vulnerability"
+class="section level2">
+<h2>Structural Determinants of Elevated Housing Vulnerability</h2>
+<p><u><strong>Districts with Complex, High-Load Multifamily
+Systems</strong></u></p>
+<p>The CDVI Map identifies Lower Manhattan (CDVI 65.4) as the
+highest-vulnerability district. The underlying insight becomes clear
+only when CDVI values are interpreted alongside the structural
+mini-maps:</p>
+<ul>
+<li>The district contains significant pre-war elevator and walk-up stock
+in the Chinatown and Lower East Side portions of the CD</li>
+<li>These buildings rely on legacy electrical, ventilation, and
+mechanical systems that are repeatedly flagged in DOB and HPD datasets
+for their complexity and age</li>
+<li>Dense vertical stacking amplifies exposure: failures in mechanical
+systems affect entire risers or elevator banks</li>
+</ul>
+<p>Together, these conditions produce a structural configuration where
+aging systems and mechanical load drive elevated vulnerability.</p>
+<p><u><strong>Districts Defined by Capital-Constrained Pre-War
+Stock</strong></u></p>
+<p>A second configuration appears in the central Bronx corridor,
+including:</p>
+<ul>
+<li>Hunts Point / Longwood (57.1)</li>
+<li>Belmont / East Tremont (54.9)</li>
+<li>Morrisania / Crotona (53.9)</li>
+</ul>
+<p>These neighborhoods contain some of NYC’s most concentrated
+early-20th-century multifamily stock. HPD’s ERP and violation datasets
+consistently document:</p>
+<ul>
+<li>Chronic utility failures including repeated heat and hot-water
+outages, and</li>
+<li>Deteriorating building-envelope conditions</li>
+</ul>
+<p>The Relative Ranking view positions these districts significantly
+above the Bronx median, indicating structural risk that outpaces
+borough-wide patterns. Here, vulnerability arises from aging stock
+compounded by long-term reinvestment deficits.</p>
+<p><u><strong>Divergent Vulnerability Pathways Across
+Queens</strong></u></p>
+<p>The dashboard reveals that Queens’ highest-CDVI districts fall into
+two contrasting structural patterns:</p>
+<ol style="list-style-type: decimal">
+<li>Density-Intensive Districts (e.g., LIC/Sunnyside 58.2; Astoria
+56.9)</li>
+</ol>
+<ul>
+<li>The mini-maps show large elevator buildings with high household
+concentration</li>
+<li>LIC is among the city’s fastest-growing housing nodes, increasing
+mechanical and infrastructural load</li>
+<li>The ranking chart places these districts well above the borough
+median</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Aging Low-Rise Stock with Slow Reinvestment (e.g., Richmond
+Hill/Woodhaven 58.1; Ozone Park 56.4)</li>
+</ol>
+<ul>
+<li>These areas contain older one- to three-family structures with
+extended rehabilitation cycles</li>
+<li>Vulnerability in these districts is driven by age-related
+deterioration, rather than density or system load</li>
+<li>The mini-maps isolate this pattern clearly: high building-age scores
+paired with low density indicators</li>
+</ul>
+<p>Queens thus demonstrates structurally heterogeneous vulnerability
+shaped by distinct local building forms and investment histories.</p>
+</div>
+<div
+id="strategic-implications-for-hpds-communication-and-policy-alignment"
+class="section level2">
+<h2>Strategic Implications for HPD’s Communication and Policy
+Alignment</h2>
+<p>The insights above translate a complex risk landscape into a coherent
+communication and coordination strategy.</p>
+<p><u><strong>1. Anchor communication decisions in defensible,
+data-driven prioritization</strong></u></p>
+<p>The CDVI and within-borough ranking views give the CME a transparent
+rationale for why certain districts should receive intensified
+messaging, more frequent engagement with elected officials, or earlier
+program rollouts. Instead of relying on anecdotal complaints or
+political pressure, the CME can point to measurable deviation from
+borough norms when justifying the concentration of tenant-rights
+campaigns, owner-outreach initiatives, or enforcement visibility. This
+creates a prioritization framework that is explainable, repeatable, and
+aligned with HPD’s preservation mandate, reducing the risk of
+accusations of inconsistency or inequity.</p>
+<p><u><strong>2. Align messaging with the specific intervention levers
+HPD controls</strong></u></p>
+<p>Because each CDVI component corresponds to an HPD action
+domain—rehabilitation finance, code enforcement, stabilization support,
+and communication around tenant protections—the CME can tailor
+communication to <strong>what HPD can actually deliver in each
+district</strong>, rather than relying on broad, one-size-fits-all
+narratives.</p>
+<p>The dashboard allows the CME to:</p>
+<ul>
+<li>Pair communication about repair obligations with areas where
+building systems are failing more often</li>
+<li>Frame preservation financing as a response to structurally
+documented reinvestment needs</li>
+<li>Emphasize tenant-protection and stabilization messaging where the
+regulated share of housing is low</li>
+<li>Use structural evidence to articulate why program emphasis shifts
+from district to district</li>
+</ul>
+<p>This ensures the public narrative is not only accurate, but
+operationally grounded, strengthening HPD’s credibility.</p>
+<p><u><strong>3. Translate structural insights into clear, anticipatory
+policy framing</strong></u></p>
+<p>The CDVI dashboard transparently reveals where building systems are
+fragile, where reinvestment has lagged, or where dense housing
+environments magnify operational failures. This allows the CME to:</p>
+<ul>
+<li>Anticipate and address objections about uneven resource distribution
+by showing how district-level conditions justify differentiated
+responses</li>
+<li>Equip elected officials and community leaders with clear, visual
+evidence they can use when communicating with constituents</li>
+<li>Shape media narratives by grounding explanations in the same spatial
+logic reflected in the dashboard, reducing the risk of oversimplified or
+adversarial interpretations</li>
+</ul>
+<p>In effect, the dashboard becomes a proactive communication tool,
+allowing the CME to lead the narrative rather than respond to
+misinterpretations after they emerge. This elevates HPD’s public
+positioning by tying its decisions to transparent analytical reasoning,
+strengthening credibility across stakeholder groups.</p>
+<hr />
+<div id="appendix" class="section level3">
+<h3>Appendix</h3>
+<blockquote>
+<p>Each member of our group, as members of Columbia University adhering
+to its academic integrity and community standards, agrees that our
+individual contribution scores should be assigned as listed below:</p>
+</blockquote>
+<p><strong>Group number:</strong> 7</p>
+<table style="width:90%; border-collapse: collapse; margin-top: 10px;">
+<thead>
+<tr>
+<th style="border: 1px solid #999; padding: 8px; text-align:left;">
+Member name
+</th>
+<th style="border: 1px solid #999; padding: 8px; text-align:left;">
+Contribution Score (0 - 10 scale)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border: 1px solid #999; padding: 8px;">
+Aji, Andre
+</td>
+<td style="border: 1px solid #999; padding: 8px;">
+10
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 8px;">
+Suhandinata, Elysia
+</td>
+<td style="border: 1px solid #999; padding: 8px;">
+10
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 8px;">
+Ye, Qizhen
+</td>
+<td style="border: 1px solid #999; padding: 8px;">
+10
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #999; padding: 8px;">
+Zong, Shiyu
+</td>
+<td style="border: 1px solid #999; padding: 8px;">
+10
+</td>
+</tr>
+</tbody>
+</table>
+<p>     </p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
